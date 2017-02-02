@@ -122,7 +122,7 @@ public class MoviemainController {
 			return "redirect:index";
 		}
 		else{
-			model.addAttribute("msg", "아이디와 비밀번호를 확인 후 다시 시도해 주십시오."); 
+			model.addAttribute("msg", "�븘�씠�뵒�� 鍮꾨�踰덊샇瑜� �솗�씤 �썑 �떎�떆 �떆�룄�빐 二쇱떗�떆�삤."); 
 			return "redirect:login";
 		}
 			
@@ -175,7 +175,7 @@ public class MoviemainController {
 	public String memberinsert(Locale locale, Model model,HttpServletRequest request,MemberEntity mem,NonmemberEntity nmb) throws Exception {
 		MemberEntity rtnMem=movieService.idcheck(request.getParameter("mb_id"));
 		if(rtnMem!=null){
-			model.addAttribute("msg", "아이디가 이미 존재합니다."); 
+			model.addAttribute("msg", "�븘�씠�뵒媛� �씠誘� 議댁옱�빀�땲�떎."); 
 			return "redirect:newmember";
 		}
 		if(rtnMem==null){
@@ -220,7 +220,7 @@ public class MoviemainController {
 		List<FaqEntity> faqList=movieService.faqsearch(request.getParameter("searchKeyword1"));
 		//request.getParameter("selectCodition");
 		System.out.println(request.getParameter("searchKeyword1"));
-		if(faqList.isEmpty()){//찾을게없으면
+		if(faqList.isEmpty()){//李얠쓣寃뚯뾾�쑝硫�
 			model.addAttribute("divSearchNone", "none");
 		}
 		if(!request.getParameter("searchKeyword2").isEmpty()){
@@ -262,6 +262,8 @@ public class MoviemainController {
 		
 		return "notice_detail";
 	}
-
+	
+	
+	
 	
 }

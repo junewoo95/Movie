@@ -9,6 +9,13 @@ public class ScreeningScheduleEntity {
 	String ss_endtime;
 	String ss_date;
 	String ss_info;
+	int ss_attendance;
+	public int getSs_attendance() {
+		return ss_attendance;
+	}
+	public void setSs_attendance(int ss_attendance) {
+		this.ss_attendance = ss_attendance;
+	}
 	public int getSs_id() {
 		return ss_id;
 	}

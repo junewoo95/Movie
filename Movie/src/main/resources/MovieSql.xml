@@ -70,15 +70,26 @@
 	</select>
 
 	<!-- 도 이름 출력  -->
-<!-- 	<select id="selectDoLocation" resultType="theater" parameterType="theater">
+	<select id="selectDoLocation" resultType="theater" parameterType="theater">
 		select th_do from (select th_do, min(th_id) as th_id from theater group by th_do order by th_id)
 	</select>
-	 -->
-	<!-- 영화목록 출력  -->
-<!-- 	<select id = "selectAllList" resultType="movie">
-		SELECT * FROM movie
+	<select id="selectTheaterLocation" parameterType="theater" resultType="theater" >
+		SELECT th_name FROM THEATER where th_do = #{th_do}
 	</select>
-	<select id="selectMovie" parameterType="movie" resultType="movie" >
-		SELECT * FROM movie where mv_name = ${mv_name}
-	</select> -->
+	<select id="selectTheaterMovie" parameterType="theater" resultType="hashmap" >
+		select th_name, mv_name, mv_grade from theater a, movie b, screening c where b.mv_id= c.mv_id and a.th_id=c.th_id and a.th_name=#{th_name}  order by B.MV_ID
+	</select>
+	<select id="selectTheaterMovieTime" parameterType="hashmap" resultType="hashmap" >
+select mv_name,ss_starttime,ss_endtime,ss_info,mv_grade,th_name,st_name,st_name,stype_num,ss_date,SS_ATTENDANCE
+from screeningschedule a,screeningtheater b, theater c,screening d, movie e, SEATINGTYPE f 
+where a.st_id=b.st_id and b.th_id=c.th_id and d.sc_id=a.sc_id and d.mv_id=e.mv_id and b.st_type=stype_name and th_name=#{th_name} and ss_date=#{ss_date} order by mv_name,ss_starttime
+		</select>
+		
+		<!-- event -->
+	<select id = "selectEvent" resultType="event">
+		SELECT * FROM event
+	</select>
+	<select id = "selectEventDetail" resultType="event">
+		SELECT * FROM event where ev_id=#{ev_id}
+	</select>
 </mapper>
