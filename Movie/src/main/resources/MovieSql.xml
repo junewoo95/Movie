@@ -53,6 +53,21 @@
 			<if test = "con==3"> where no_context like '%'||#{searchKeyword}||'%' or no_title like '%'||#{searchKeyword}||'%'</if>
 			
 	</select>
+	
+	<!-- (영화~>박스오피스) 영화목록 출력(현재상영작-예매순)  -->
+	<select id = "selectAllList" resultType="movie">
+		select * from movie where mv_playdate between '2016.12.00' and '2017.02.01' order by mv_reservationrate desc
+	</select>
+	
+	<!-- (영화~>박스오피스) 영화목록 출력(현재상영작-평점순)  -->
+	<select id = "selectAllList2" resultType="movie">
+		select * from movie where mv_playdate between '2016.12.00' and '2017.02.01' order by mv_rating desc
+	</select>
+
+	<!-- (영화~>박스오피스) 영화목록 출력(상영예정작)  -->
+	<select id = "selectAllList3" resultType="movie">
+		select movie.*, (to_date(mv_playdate, 'yyyy.mm.dd') - to_date(to_char(sysdate, 'yyyy.mm.dd'), 'yyyy.mm.dd')) d_day from movie where mv_playdate >= to_char(sysdate, 'yyyy.mm.dd') order by mv_playdate
+	</select>
 
 	<!-- 도 이름 출력  -->
 <!-- 	<select id="selectDoLocation" resultType="theater" parameterType="theater">
