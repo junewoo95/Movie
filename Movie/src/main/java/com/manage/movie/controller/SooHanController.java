@@ -30,19 +30,6 @@ public class SooHanController {
 	 * @throws Exception 
 	 */
 
-	@RequestMapping("/index")
-	public String ProfileAllList(Locale locale, Model model) throws Exception {
-
-	//	model.addAttribute("mo", movieService.movieselectList());
-		//model.addAttribute("no", movieService.noticewhereall());
-		return "index";
-	}
-	@RequestMapping("/login")
-	public String LoginAllList(Locale locale, Model model) throws Exception {
-
-		return "login";
-	}
-	
 	@RequestMapping("/event-summary-list")
 	public String EventList(Locale locale, Model model) throws Exception {
 		model.addAttribute("eventList", movieService.selectEvent());
@@ -98,14 +85,5 @@ public class SooHanController {
 
 		return "movie-schedule";
 	}
-	
-	@RequestMapping("/Movie-List")
-	public String sendMovieList(Locale locale, Model model) throws Exception {
-		//movieService.getAllList();
-		
-		//model.addAttribute("MovieList", movieService.getAllList());
-		return "Movie-List";
-	}
-	
-	
+
 }
