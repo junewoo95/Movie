@@ -22,10 +22,6 @@ public class YoojungDao{
 			return sqlSession.selectList("movieDao.movieorderby");
 	}
 	
-	public List<MovieEntity> selectMovieGrade() throws Exception{
-		return sqlSession.selectList("movieDao.selectMovieGrade");
-	}
-	
 	public List<HashMap> selectTheaterMovieList(String th_name) throws Exception{
 		return sqlSession.selectList("movieDao.selectTheaterMovieList", th_name);
 	}
@@ -34,23 +30,11 @@ public class YoojungDao{
 		return sqlSession.selectList("movieDao.selectTheaterMovieListTime", th_name);
 	}
 
-/*	public List<NoticeEntity> noticewhereall() throws Exception{
-		return sqlSession.selectList("movieDao.noticewhereall");
-	}*/
-	
 	public List<TheaterEntity> selectDoList() throws Exception{
 		return sqlSession.selectList("movieDao.selectDoLocation");
 	}
+	
 	public List<TheaterEntity> selectTheaterList(String th_do) throws Exception{
 		return sqlSession.selectList("movieDao.selectTheaterLocation", th_do);
 	}
-	
-	public List<MovieEntity> selectList() throws Exception{
-		return sqlSession.selectList("MovieDao.selectAllList");
-	}
-	
-	public MovieEntity selectmovieInfo(MovieEntity movie) throws Exception{
-		return sqlSession.selectOne("MovieDao.selectMovie", movie);
-	}
-
 }
