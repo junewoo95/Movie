@@ -699,7 +699,7 @@
 										<div class="curr_box">
 										<c:if test="${mode2 eq '1'}">
 											<span class="num"><%=rank%></span> <span class="img">
-												<a href="javascript:void(0);"><img src="${movie.mv_picture}" alt="${movie.mv_name}"></a>
+												<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/resources/img/${movie.mv_picture}" alt="${movie.mv_name}"></a>
 											</span>
 										</c:if>
 										<c:if test="${mode2 eq '2'}">
