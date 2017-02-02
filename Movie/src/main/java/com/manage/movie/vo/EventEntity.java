@@ -2,24 +2,25 @@ package com.manage.movie.vo;
 
 public class EventEntity {
 	int ev_id;
-	String th_name;
 	String ev_title;
 	String ev_photo_mini;
 	String ev_photo_full;
 	String ev_start_date;
 	String ev_end_date;
+	String ev_type;
+	public String getEv_type() {
+		return ev_type;
+	}
+	public void setEv_type(String ev_type) {
+		this.ev_type = ev_type;
+	}
 	public int getEv_id() {
 		return ev_id;
 	}
 	public void setEv_id(int ev_id) {
 		this.ev_id = ev_id;
 	}
-	public String getTh_name() {
-		return th_name;
-	}
-	public void setTh_name(String th_name) {
-		this.th_name = th_name;
-	}
+
 	public String getEv_title() {
 		return ev_title;
 	}
