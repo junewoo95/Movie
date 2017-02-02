@@ -38,13 +38,19 @@ public class YoojungService {
 		return rtnList;
 	}
 	
+/*	public List<NoticeEntity> noticewhereall() throws Exception{
+
+		List<NoticeEntity>rtnList = movieDao.noticewhereall();
+
+		return rtnList;
+	}*/
+	
 	public List<TheaterEntity> selectDoList() throws Exception{
 
 		List<TheaterEntity>rtnList = movieDao.selectDoList();
 
 		return rtnList;
 	}
-	
 	public List<TheaterEntity> selectTheaterList(String th_do) throws Exception{
 
 		List<TheaterEntity>rtnList = movieDao.selectTheaterList(th_do);
@@ -52,4 +58,14 @@ public class YoojungService {
 		return rtnList;
 	}
 
+	public List<MovieEntity> getAllList() throws Exception{
+
+		List<MovieEntity>rtnList = movieDao.selectList();
+
+		return rtnList;
+	}
+	
+	public MovieEntity selectMovieInfo(MovieEntity movie) throws Exception{
+		return movieDao.selectmovieInfo(movie);
+	}
 }

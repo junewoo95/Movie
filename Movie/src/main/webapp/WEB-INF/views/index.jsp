@@ -198,7 +198,7 @@ function noticedetail(){
                 <!-- GNB area -->
                 <div class="gnb">
                     <ul>
-                    <li><a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx" title="예매">예매</a>
+                    <li><a href="ticketing" title="예매">예매</a>
                     	<div class="depth">
                     		<ul>
                     			<li><a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx" title="예매하기">예매하기</a></li>
