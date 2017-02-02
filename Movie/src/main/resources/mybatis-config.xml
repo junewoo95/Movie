@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.manage.movie.vo.CostEntity" alias="cost"/>
+		<typeAlias type="com.manage.movie.vo.EventEntity" alias="event"/>
+		<typeAlias type="com.manage.movie.vo.FaqEntity" alias="faq"/>
+		<typeAlias type="com.manage.movie.vo.HistoryEntity" alias="history"/>
+		<typeAlias type="com.manage.movie.vo.MovieEntity" alias="movie"/>
+		<typeAlias type="com.manage.movie.vo.MemberEntity" alias="member"/>
+		<typeAlias type="com.manage.movie.vo.NonmemberEntity" alias="nonmember"/>
+		<typeAlias type="com.manage.movie.vo.NoticeEntity" alias="notice"/>
+		<typeAlias type="com.manage.movie.vo.ReservationEntity" alias="reservation"/>
+		<typeAlias type="com.manage.movie.vo.ScreeningScheduleEntity" alias="screeningSchedule"/>
+		<typeAlias type="com.manage.movie.vo.ScreeningTheaterEntity" alias="screeningTheater"/>
+		<typeAlias type="com.manage.movie.vo.ScreeningEntity" alias="screening"/>
+		<typeAlias type="com.manage.movie.vo.SeatingEntity" alias="seating"/>
+		<typeAlias type="com.manage.movie.vo.TheaterEntity" alias="theater"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource = "MovieSql.xml" />
+	</mappers>
+</configuration>

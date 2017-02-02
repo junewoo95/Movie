@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "movieDao">
+	<!-- 예매율실행 영화 -->
+	<select id = "movieorderby1" resultType="movie">
+		select * from movie order by mv_reservationrate desc
+	</select>
+	<select id = "movieorderby2" resultType="movie">
+		select * from movie order by mv_grade desc
+	</select>
+	<select id = "memberalllist" resultType="member">
+		select * from member
+	</select>
+	<select id = "idcheck" resultType="member" parameterType="String">
+		select * from member where mb_id = #{mb_id}
+	</select>
+	<insert id="insertmember" parameterType="member">
+		insert into member values (#{mb_id},#{mb_password},#{mb_name},#{mb_address},#{mb_birth},#{mb_email},#{mb_sex},#{mb_mileage},#{mb_rating},#{mb_phone})
+	</insert>
+	<insert id="insertNonmember" parameterType="nonmember">
+		insert into nonmember values (nmb_id_seq.nextval,#{nmb_name},#{nmb_phone},#{nmb_password})
+	</insert>
+	<select id = "nonmemberselect" resultType="nonmember" parameterType="nonmember">
+		select * from nonmember where nmb_phone = #{nmb_phone}
+	</select>
+	<!-- 초기실행 공지사항 -->
+	<select id = "noticewhereall" resultType="notice">
+		select * from notice where th_name='전체' order by no_count desc
+	</select>
+	<select id = "noticeorderbydate" resultType="notice">
+		select * from notice order by no_date desc
+	</select>
+	<select id = "noticepaging" parameterType="Integer" resultType="notice">
+		select * from (select ROWNUM idx, a.* from (select e.* from notice e order by no_date desc) a) b where b.idx between 1+(#{page}-1)*2 and 2+(#{page}-1)*2
+	</select>
+	<select id = "noticewherenoid" parameterType="Integer" resultType="notice">
+		select * from notice where no_id=#{no_id}
+	</select>
+	<select id = "faqorderbyid" resultType="faq">
+		select * from faq order by fq_id
+	</select>
+	<select id = "faqsearch" parameterType="String" resultType="faq">
+		select * from faq where fq_question like '%'||#{searchKeyword}||'%'
+	</select>
+	<select id = "noticesearch" parameterType="hashmap" resultType="notice">
+			select * from notice 
+			<if test = "con==1"> where no_title like '%'||#{searchKeyword}||'%' </if>
+			<if test = "con==2"> where no_context like '%'||#{searchKeyword}||'%' </if>
+			<if test = "con==3"> where no_context like '%'||#{searchKeyword}||'%' or no_title like '%'||#{searchKeyword}||'%'</if>
+			
+	</select>
+
+	<!-- 도 이름 출력  -->
+<!-- 	<select id="selectDoLocation" resultType="theater" parameterType="theater">
+		select th_do from (select th_do, min(th_id) as th_id from theater group by th_do order by th_id)
+	</select>
+	 -->
+	<!-- 영화목록 출력  -->
+<!-- 	<select id = "selectAllList" resultType="movie">
+		SELECT * FROM movie
+	</select>
+	<select id="selectMovie" parameterType="movie" resultType="movie" >
+		SELECT * FROM movie where mv_name = ${mv_name}
+	</select> -->
+</mapper>
