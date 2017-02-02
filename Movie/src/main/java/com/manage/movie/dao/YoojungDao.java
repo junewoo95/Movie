@@ -19,7 +19,7 @@ public class YoojungDao{
 	SqlSessionTemplate sqlSession;
 
 	public List<MovieEntity> movieselectList() throws Exception{
-			return sqlSession.selectList("movieDao.movieorderby");
+			return sqlSession.selectList("movieDao.movieorderby1");
 	}
 	
 	public List<HashMap> selectTheaterMovieList(String th_name) throws Exception{
