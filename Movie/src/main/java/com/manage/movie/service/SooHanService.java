@@ -30,7 +30,7 @@ public class SooHanService {
 
 		return rtnList;
 	}*/
-	//�뜝�룞�삕 �뜝�떛紐뚯삕 �뜝�룞�삕�뜝占�
+	//占쏙옙 占싱몌옙 占쏙옙占�
 	public List<TheaterEntity> selectDoList() throws Exception{
 
 		List<TheaterEntity>rtnList = movieDao.selectDoList();
@@ -70,5 +70,17 @@ System.out.println(hm.values());*/
 
 		return rtnList;
 	}
+	///
+	
+	
+	public List<MovieEntity> getAllList() throws Exception{
 
+		List<MovieEntity>rtnList = movieDao.selectList();
+
+		return rtnList;
+	}
+	
+	public MovieEntity selectMovieInfo(MovieEntity movie) throws Exception{
+		return movieDao.selectmovieInfo(movie);
+	}
 }

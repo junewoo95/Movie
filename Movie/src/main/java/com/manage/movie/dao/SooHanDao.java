@@ -26,7 +26,7 @@ public class SooHanDao{
 		return sqlSession.selectList("movieDao.noticewhereall");
 	}*/
 	
-	//�뜝�룞�삕�뜝�떛紐뚯삕 �뜝�룞�삕�뜝占�
+	//占쏙옙占싱몌옙 占쏙옙占�
 	public List<TheaterEntity> selectDoList() throws Exception{
 		return sqlSession.selectList("movieDao.selectDoLocation");
 	}
@@ -50,5 +50,15 @@ public class SooHanDao{
 	}
 	
 	
+	//占쏙옙화占쏙옙占쏙옙트 占쏙옙占�
+	public List<MovieEntity> selectList() throws Exception{
+		return sqlSession.selectList("MovieDao.selectAllList");
+	}
+	
+	public MovieEntity selectmovieInfo(MovieEntity movie) throws Exception{
+		//System.out.println(profile.getName());
+		//System.out.println(profile.getEmail());
+		return sqlSession.selectOne("MovieDao.selectMovie", movie);
+	}
 
 }
