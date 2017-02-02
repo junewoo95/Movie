@@ -705,7 +705,7 @@
 										<c:if test="${mode2 eq '2'}">
 											<span class="day_deadline">D-${movie.d_day}</span> 
 											<span class="img">
-												<a href="javascript:void(0);"><img src="${movie.mv_picture}" alt="${movie.mv_name}"></a>
+												<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/resources/img/${movie.mv_picture}" alt="${movie.mv_name}"></a>
 											</span>
 										</c:if>
 										</div>
