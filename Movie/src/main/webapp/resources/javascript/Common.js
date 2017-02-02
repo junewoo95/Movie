@@ -188,7 +188,7 @@ JsonCallSync = function (url, params, reCall) {
     try {
         $.ajax({
             type: "post",
-            async: false,
+            async: true,
             url: url + "?nocashe=" + String(Math.random()),
             dataType: "json",
             data: params,
@@ -219,7 +219,7 @@ JsonReturnDataSync = function (url, params) {
     try {
         $.ajax({
             type: "post",
-            async: false,
+            async: true,
             url: url + "?nocashe=" + String(Math.random()),
             dataType: "json",
             data: params,
