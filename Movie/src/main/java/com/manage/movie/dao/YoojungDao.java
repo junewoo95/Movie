@@ -21,7 +21,7 @@ public class YoojungDao{
 	public List<MovieEntity> movieselectList() throws Exception{
 			return sqlSession.selectList("movieDao.movieorderby1");
 	}
-
+	
 	public List<HashMap> selectTheaterMovieList(String th_name) throws Exception{
 		return sqlSession.selectList("movieDao.selectTheaterMovieList", th_name);
 	}
@@ -36,9 +36,8 @@ public class YoojungDao{
 	public List<TheaterEntity> selectDoList() throws Exception{
 		return sqlSession.selectList("movieDao.selectDoLocation");
 	}
+	
 	public List<TheaterEntity> selectTheaterList(String th_do) throws Exception{
 		return sqlSession.selectList("movieDao.selectTheaterLocation", th_do);
 	}
-	
-
 }

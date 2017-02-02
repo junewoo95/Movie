@@ -37,13 +37,14 @@ public class YoojungService {
 
 		return rtnList;
 	}
-
+	
 	public List<TheaterEntity> selectDoList() throws Exception{
 
 		List<TheaterEntity>rtnList = movieDao.selectDoList();
 
 		return rtnList;
 	}
+	
 	public List<TheaterEntity> selectTheaterList(String th_do) throws Exception{
 
 		List<TheaterEntity>rtnList = movieDao.selectTheaterList(th_do);
