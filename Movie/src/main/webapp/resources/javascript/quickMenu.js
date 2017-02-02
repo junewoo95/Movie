@@ -34,14 +34,14 @@ initQuickMenu = function () {
 };
 
 // 사이드 퀵 메뉴 슬라이드
-//quickOnOff = function () {
-//	var target = $("#quick_ver2");
-//	if (target.hasClass("on")) {
-//	    target.removeClass('on').animate({'right':-75},200);
-//	} else {
-//	    target.addClass('on').animate({ 'right': 0 }, 200);
-//	}
-//}
+quickOnOff = function () {
+	var target = $("#quick_ver2");
+	if (target.hasClass("on")) {
+	    target.removeClass('on').animate({'right':-75},200);
+	} else {
+	    target.addClass('on').animate({ 'right': 0 }, 200);
+	}
+}
 
 // 퀵메뉴호출        
 getQuickMenuData = function () {
@@ -98,7 +98,7 @@ getQuickMenuData = function () {
 *********************************************************/
 responseQuickMenuData = function (obj) {
 	try {
-		var jsonData;
+		/*var jsonData;
 		var quickMenuItems;
 
 		jsonData = obj.responseJSON;
@@ -109,8 +109,8 @@ responseQuickMenuData = function (obj) {
 		if (jsonData.IsOK != "true") { throw new Error("\n - JSON retrun message: \n    " + jsonData.ResultMessage); }
 
 		quickMenuItems = jsonData.QuickMenuItems.Items;
-
-		appendQuickMenu(quickMenuItems)
+		 */
+		appendQuickMenu();
 
 	} catch (e) {
 		//CheckException(e, "responseQuickMenuData", "common");
@@ -118,7 +118,7 @@ responseQuickMenuData = function (obj) {
 }
 
 //사이드 퀵메뉴를 화면에 추가한다.
-appendQuickMenu = function (quickMenuItems) {
+appendQuickMenu = function () {
 	var htmlString;
 	var sbQuick = new StringBuilder();
 
@@ -126,12 +126,20 @@ appendQuickMenu = function (quickMenuItems) {
 	sbQuick.Append('<div class="quick_ver2" id="quick"><!-- [D] 접근성 관련 : 스크립트로 탭키이동시 foucs in, focus out  제어 필요 -->');
 	sbQuick.Append('<ul>');
 	//sbQuick.Append('<li><a href="javascript:void(0);" onclick="quickOnOff()" title="QUICK MENU"><span><img src="/LCHS/Image/icon/icon_quick01.png" alt="QUICK MENU" /></span>QUICK MENU</a></li>');
-	for (var key in quickMenuItems) {
+	/*for (var key in quickMenuItems) {
 	    //sbQuick.AppendFormat('<li><a href="{0}" title="{1}"><span><img src="{3}" alt="{1}" /></span>{2}</a></li>', quickMenuItems[key].LinkUrl, quickMenuItems[key].ImageAlt, quickMenuItems[key].MenuName, quickMenuItems[key].ImageFullPath);
 	    sbQuick.AppendFormat('<li><a href="{0}" title="{1}"><span><img src="{2}" alt="{1}" /></span></a></li>', quickMenuItems[key].LinkUrl, quickMenuItems[key].ImageAlt, quickMenuItems[key].ImageFullPath);
-	}
+	}*/
+	//sbQuick.AppendFormat('<li><a href="{0}" title="{1}"><span><img src="{2}" alt="{1}" /></span></a></li>', "/ticketing", "빠른예매바로가기", "/resources/img/bg/a021109040b34b989bf01bacf6263973.jpg");
+	sbQuick.AppendFormat('<li><a href="{0}" title="{1}"><span><img src="{2}" alt="{1}" /></span></a></li>', "/ticketing", "빠른예매바로가기", "./resources/img/a021109040b34b989bf01bacf6263973.jpg");
+	sbQuick.AppendFormat('<li><a href="{0}" title="{1}"><span><img src="{2}" alt="{1}" /></span></a></li>', "/ticketing", "할인가이드바로가기", "./resources/img/804a2bc19b1444e5924d82088dfc5134.jpg");
+	sbQuick.AppendFormat('<li><a href="{0}" title="{1}"><span><img src="{2}" alt="{1}" /></span></a></li>', "/ticketing", "예매내역바로가기", "./resources/img/1ec48d357ba44dbeaa0ef261d93e4003.jpg");
+	sbQuick.AppendFormat('<li><a href="{0}" title="{1}"><span><img src="{2}" alt="{1}" /></span></a></li>', "/ticketing", "멤버십", "./resources/img/aa6b80b43c4e4398a636db1d13122895.jpg");
+	sbQuick.AppendFormat('<li><a href="{0}" title="{1}"><span><img src="{2}" alt="{1}" /></span></a></li>', "/ticketing", "고객센터바로가기", "./resources/img/47141787f65643938247e12b5f5c9d75.jpg");
+	
+	
 	sbQuick.Append('</ul>');
-	sbQuick.Append('<a href="javascript:void(0);" class="btn_top" title="TOP" style="display:none;"><span>TOP </span><img src="/LCHS/Image/icon/icon_quick_new07.png" alt="위로 이동"></a>');
+	sbQuick.Append('<a href="javascript:void(0);" class="btn_top" title="TOP" style="display: block;"><span>TOP </span><img src="./resources/img/icon_quick_new07.png" alt="위로 이동"></a>');
 	sbQuick.Append('</div>');
 	sbQuick.Append('<!--//  quick menu -->');
 
