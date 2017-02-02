@@ -77,4 +77,23 @@ where a.st_id=b.st_id and b.th_id=c.th_id and d.sc_id=a.sc_id and d.mv_id=e.mv_i
 	<select id = "selectEventDetail" resultType="event">
 		SELECT * FROM event where ev_id=#{ev_id}
 	</select>
+	
+		<select id="selectListTheaterInDo" parameterType="String" resultType="theater">
+		SELECT * FROM THEATER WHERE TH_DO = #{th_do}
+	</select>
+	<select id="detailTheaterInfo" parameterType="theaterdetail" resultType="hashmap">
+		SELECT th_name , td_address, td_totalscreening, td_totalseating, img, bus, subway, car, pkLot FROM theaterDetail a, theater b WHERE a.TD_ID =  #{td_id} and a.td_id = b.th_id
+	</select> 
+	
+	<select id="screeninginfo" parameterType="integer" resultType="hashmap">
+	select a.mv_name, a.mv_grade,b.ss_info,b.ss_starttime, b.ss_endtime,c.st_name 
+	from movie a, screening d, screeningschedule b, screeningtheater c 
+	where a.mv_id=d.mv_id and d.sc_id=b.sc_id and b.st_id=c.st_id and c.th_id = #{th_id}
+	</select>
+	
+	<select id="screeningTitleinfo" parameterType="integer" resultType="hashmap">
+	select distinct a.mv_name, a.mv_grade
+	from movie a, screening d, screeningschedule b, screeningtheater c 
+	where a.mv_id=d.mv_id and d.sc_id=b.sc_id and b.st_id=c.st_id and c.th_id = #{th_id}
+	</select>
 </mapper>
