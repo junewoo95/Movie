@@ -676,7 +676,7 @@
 						<div class="item_list">
 						<c:if test="${mode2 eq '1'}">
 							<ul id="ulNowOrder">
-								<li><a href="Movie-List?mode=a" class="on Lang-LBL0000" id="aTiket" onclick="mv_change(a);">예매순</a></li>
+								<li><a href="Movie-List?mode=a" class="on Lang-LBL0000" id="aTiket" onclick="mv_change(a);">예매순 &nsbp; &nsbp;|</a></li>
 								<li><a href="Movie-List?mode=b" class="Lang-LBL0000" id="aRank" onclick="mv_change(b);">평점순</a></li>
 							</ul>
 						</c:if>
