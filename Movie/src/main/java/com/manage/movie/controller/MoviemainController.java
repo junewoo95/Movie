@@ -108,7 +108,7 @@ public class MoviemainController {
 		MemberEntity rtnMem=movieService.idcheck(request.getParameter("mb_id"));
 		
 		if (rtnMem == null){
-			model.addAttribute("msg", "아이디와 비밀번호를 확인 후 다시 시도해 주십시오.");
+			model.addAttribute("msg", "�븘�씠�뵒�� 鍮꾨�踰덊샇瑜� �솗�씤 �썑 �떎�떆 �떆�룄�빐 二쇱떗�떆�삤.");
 			return "redirect:login";
 		}
 		String idcheck="memy";
