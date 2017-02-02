@@ -24,6 +24,7 @@
 		<typeAlias type="com.manage.movie.vo.ScreeningTheaterEntity" alias="screeningTheater"/>
 		<typeAlias type="com.manage.movie.vo.ScreeningEntity" alias="screening"/>
 		<typeAlias type="com.manage.movie.vo.SeatingEntity" alias="seating"/>
+		<typeAlias type="com.manage.movie.vo.TheaterDetailEntity" alias="theaterdetail"/>
 		<typeAlias type="com.manage.movie.vo.TheaterEntity" alias="theater"/>
 	</typeAliases>
 	
