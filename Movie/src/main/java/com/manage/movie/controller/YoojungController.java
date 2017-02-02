@@ -81,6 +81,7 @@ public class YoojungController {
 	      
 	      Enumeration paramList = req.getParameterNames();
 	      String th_name = "";
+	      String ss_date = "";
 	      
 	      while(paramList.hasMoreElements()){
 	         String paramName = paramList.nextElement().toString();
@@ -90,9 +91,10 @@ public class YoojungController {
 	      }
 	      
 	      if ( "".equals(th_name)) th_name = "°­³²";
+	      ss_date = req.getParameter("ss_date");
 	      
 	      model.addAttribute("movieList", movieService.selectTheaterMovieList(th_name));
-	      model.addAttribute("movieListTime", movieService.selectTheaterMovieListTime(th_name));
+	      model.addAttribute("movieListTime", movieService.selectTheaterMovieListTime(th_name, ss_date));
 	      model.addAttribute("theater_name", th_name);
 
 	      return "ticketing_iframe";

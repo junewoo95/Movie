@@ -26,8 +26,11 @@ public class YoojungDao{
 		return sqlSession.selectList("movieDao.selectTheaterMovieList", th_name);
 	}
 	
-	public List<HashMap> selectTheaterMovieListTime(String th_name) throws Exception{
-		return sqlSession.selectList("movieDao.selectTheaterMovieListTime", th_name);
+	public List<HashMap> selectTheaterMovieListTime(String th_name, String ss_date) throws Exception{
+		HashMap map= new HashMap();
+		map.put("th_name", th_name);
+		map.put("ss_date", ss_date);
+		return sqlSession.selectList("movieDao.selectTheaterMovieTime", map);
 	}
 
 	public List<TheaterEntity> selectDoList() throws Exception{

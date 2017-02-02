@@ -23,21 +23,13 @@
 <!-- <link rel="shortcut icon" type="image/x-icon" href="/LCHS/Image/Icon/favicon.ico" /><title> -->
 
 <script type="text/javascript">
+	var today;
 
-	function tkMTabClick(mode){
+	function tkMTabClick(){
 		var clickmode;
-		//if(mode=="a"){
 			document.getElementById("reservation").className = "on";
-			//document.getElementById("grade").className = "";
 			document.getElementById("reservationList").style.display='block';	
-			//document.getElementById("gradeList").style.display='none';
-		//}
-		/* else if(mode=="b"){
-			document.getElementById("reservation").className = "";
-			document.getElementById("grade").className = "on";
-			document.getElementById("reservationList").style.display='none';	
-			document.getElementById("gradeList").style.display='block';
-		} */
+
 	}
 	
 	function changeDo(id){
@@ -45,6 +37,11 @@
 			if(id=="doName"+i){
 				document.getElementById("doName"+i).className="area_btn on";
 				document.getElementById("doName"+i+"sub").style.display='block';
+				
+				/* var fn = "ticketing_iframe?th_name="+th_name+"&ss_date="+today;
+			      document.frameChange.action = fn;
+			      document.frameChange.target = "iframe1";
+			      document.frameChange.submit(); */
 			}
 			else {
 				document.getElementById("doName"+i).className="area_btn";
@@ -57,44 +54,52 @@
 		var cnt = 0;				
 		for (var i = 1; i <= 5; i++) {
 			for (var j = 1; j <= 5; j++) {
-				alert(id);
+				//alert(id);
 				if (id == "siName" + i + j) {
-					alert(name);
+					//alert(name);
 					document.getElementById("siName" + i + j).className = "on";
-					document.getElementById("reservationList").style.display = 'none'; // 예매순
-					//document.getElementById("siName" + i + j + "sub").style.display = 'block'; // 영화관 눌렀을 때 
+					document.getElementById("reservationList").style.display = "none"; // 예매순
 
-					document.getElementById("defaultCin").style.display = 'none';
-					document.getElementById("selectCin").style.display = 'block';
-					document.getElementById("time_noData").style.display = 'none';
+					document.getElementById("defaultCin").style.display = "none";
+					document.getElementById("selectCin").style.display = "block";
+					document.getElementById("time_noData").style.display = "none";
 					
 					document.getElementById("selectCinemaName").innerHTML = name +"  "+ "<img src='/movie/resources/img/btn_mv_close.gif' alt='close' onclick='close()'>";
-					//document.getElementById("selectCinemaName").innerHTML = name;
+					
+					/* var fn = "ticketing_iframe?th_name="+th_name+"&ss_date="+today;
+				      document.frameChange.action = fn;
+				      document.frameChange.target = "iframe1";
+				      document.frameChange.submit(); */
 				}
 
 				else {
 					document.getElementById("siName" + i + j).className = "";
-					//document.getElementById("siName" + i + j + "sub").style.display = 'none';
 				}
 			}
 		}
 	}
 	
 	function dayClick(day){
-		alert(day);
+		//alert(day);
+		today=day;
 		document.getElementById("todayDate").style.display = "none";
 		
 		document.getElementById("selectDate").innerHTML = day;
 		document.getElementById("selectDate").style.display = "block";
+		
+		var fn = "ticketing_iframe?th_name="+th_name+"&ss_date="+today;
+	      document.frameChange.action = fn;
+	      document.frameChange.target = "iframe1";
+	      document.frameChange.submit();
 	}
 	
-	function movieClick(name){
+	/* function movieClick(name){
 		alert(name);
 		document.getElementById("movieName").style.display = "none";
 		document.getElementById("selectMovieList").style.display = "block";
 		
 		document.getElementById("selectMovieName").innerHTML = name +"  "+ "<img src='/movie/resources/img/btn_mv_close.gif' alt='close'>";
-	}
+	} */
 	
 	   function iframeAutoResize(h)
 	   {
@@ -114,7 +119,7 @@
 	         th_name = '${list.th_name}';
 	      </c:forEach>
 
-	      var fn = "ticketing_iframe?th_name="+th_name;
+	      var fn = "ticketing_iframe?th_name="+th_name+"&ss_date="+today;
 	      document.frameChange.action = fn;
 	      document.frameChange.target = "iframe1";
 	      document.frameChange.submit();
@@ -957,12 +962,10 @@ function __doPostBack(eventTarget, eventArgument) {
 										</dl>
 										<div class="movie_cont">
 											<ul class="tkMTab">
-												<li class="on" id="reservation" onclick="tkMTabClick('a')">
+												<li class="on" id="reservation" onclick="tkMTabClick()">
 												<a href="javascript:void(0);"
 													class="Lang-LBL0012" data-sort="BookingSortSequence">예매순</a>
 													</li>
-												<!-- <li class="" id="grade" onclick="tkMTabClick('b')"><a href="javascript:void(0);" class="Lang-LBL0014"
-													data-sort="ViewSortSequence">평점순</a></li> -->
 											</ul>
 
 												<!-- 2016.05.03 장차법 -->

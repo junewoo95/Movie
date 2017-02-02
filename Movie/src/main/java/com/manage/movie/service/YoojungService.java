@@ -31,9 +31,9 @@ public class YoojungService {
 		return rtnList;
 	}
 	
-	public List<HashMap> selectTheaterMovieListTime(String th_name) throws Exception{
+	public List<HashMap> selectTheaterMovieListTime(String th_name, String ss_date) throws Exception{
 
-		List<HashMap> rtnList = movieDao.selectTheaterMovieListTime(th_name);
+		List<HashMap> rtnList = movieDao.selectTheaterMovieListTime(th_name, ss_date);
 
 		return rtnList;
 	}
