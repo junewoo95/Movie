@@ -3257,7 +3257,7 @@
 
 .scroll_bar {clear:both; height:469px; overflow-y:auto}
 .movie_list li {padding:4px 0}
-.c li a {display:block; padding:9px 10px 9px 29px; border:1px solid #fff; color:#231f20; font-size:14px; line-height:22px; word-break:break-all}
+.movie_list li a {display:block; padding:9px 10px 9px 29px; border:1px solid #fff; color:#231f20; font-size:14px; line-height:22px; word-break:break-all}
 .movie_list li a:after {content:''; display:block; clear:both}
 .movie_list li a.on {background:url('/LCHS/Image/bg/bg_ckth.png') no-repeat 10px center; border:1px solid #999;}
 .movie_list li a.disabled {color:#d1d1d1; background:#fff; cursor:default;}
@@ -3360,11 +3360,10 @@
 .cont_ticket_Area .tab_st08 {margin-top:30px;}
 .tab_st08 {width:100%; }
 .tab_st08:after {content:''; display:block; clear:both;}
-.tab_st08 li {float:left; width:50%; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.tab_st08 li {float:left; width:100%; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
 .tab_st08 li a {display:block; margin-left:-1px; border:1px solid #c0c0c0; border-bottom:1px solid #231f20; background:#efebdb; text-align:center; font-size:16px; color:#231f20; line-height:49px;}
 .tab_st08 li:first-child a {margin-left:0;}
 .tab_st08 li .on {position:relative; z-index:1; background:#fff; border-top:3px solid #231f20; border-left:1px solid #231f20; border-right:1px solid #231f20;  border-bottom:none !important; font-weight:bold; color:#35383d; line-height:48px;}
-
 .tab_tCont {width:980px; margin:0 auto; padding:50px 0 70px}
 .tab_tCont.cinema_twrap {padding:50px 0}
 .tab_tCont.cinema_twrap .sub_tit02 {margin-bottom:30px;}
@@ -3575,17 +3574,18 @@
 .calendar .month-picker-fieldset .month-picker-label.noDate {color:#A7A2A2 !important; cursor:default;}
 .calendar .month-picker-label, .month-picker-nav {display:inline-block; vertical-align:top; cursor:pointer;}
 
-.calendar .month-picker-label.ckon em {opacity:1; filter:alpha(opacity=100); opacity:1.0; -moz-opacity:1.0; background:url('/LCHS/Image/bg/bg_cal_check.png') no-repeat center center !important; color:#fff;}
+.calendar .month-picker-label.ckon em {opacity:1; filter:alpha(opacity=100); opacity:1.0; -moz-opacity:1.0; background:url('/movie/resources/img/bg_cal_check.png') no-repeat center center; color:#fff !important; letter-spacing:-1px;}
+bg_cal_check.png') no-repeat center center !important; color:#fff;}
 .calendar .month-picker-label.month.ckon em {background:none; color:#231f20}
 
-.calendar input:checked + .month-picker-label em {opacity:1; filter:alpha(opacity=100); opacity:1.0; -moz-opacity:1.0; background:url('/LCHS/Image/bg/bg_cal_check.png') no-repeat center center; color:#fff;}
+.calendar input:checked + .month-picker-label em {opacity:1; filter:alpha(opacity=100); opacity:1.0; -moz-opacity:1.0; background:url('/movie/resources/img/bg_cal_check.png') no-repeat center center; color:#fff !important; letter-spacing:-1px;}
+bg_cal_check.png') no-repeat center center; color:#fff;}
 .calendar input:checked + .month-picker-label.month em {background:none; color:#231f20}
 .calendar input:focus + .month-picker-label {outline:1px dotted #000;}/* 2016.05.04 포커스 추가*/
 .calendar .month-picker-nav {position:absolute; top:41px; z-index:10; width:19px; height:50px; font-size:0; text-align:center;}
 .calendar .month-picker-nav.next {right:0; background:url('/LCHS/Image/btn/btn_m_next_on.png') no-repeat center center;}
 .calendar .month-picker-nav.prev {left:0; background:url('/LCHS/Image/btn/btn_m_prev_on.png') no-repeat center center;}
 .calendar .month-picker-nav.nodata {opacity:0.3; filter:alpha(opacity=30); opacity:0.3; -moz-opacity:0.3; cursor:default;}
-
 /* 예매 카드 할인가이드_검색 영역  */
 .card_search {width:980px; margin:0 auto; padding:50px 0 20px; color:#231f20;}
 .card_search .tab_st03 > li > a {width:auto;}
