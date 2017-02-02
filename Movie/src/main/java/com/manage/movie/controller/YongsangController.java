@@ -64,6 +64,7 @@ public class YongsangController {
 		else if ( mode2.equals("2")){
 			model.addAttribute("MovieList", movieService.getAllList3()); // �󿵿�����
 			List<MovieEntity> list = movieService.getAllList3();
+			System.out.println("aaaaaaaaaaa :::::::::: " + list.get(0).getD_day());
 		}
 		
 		model.addAttribute("mode", mode);

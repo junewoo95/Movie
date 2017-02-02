@@ -30,13 +30,6 @@ public class YoojungController {
 	 * @throws Exception 
 	 */
 
-	@RequestMapping("/index")
-	public String ProfileAllList(Locale locale, Model model) throws Exception {
-		model.addAttribute("mo", movieService.movieselectList());
-		//model.addAttribute("no", movieService.noticewhereall());
-		return "index";
-	}
-	
 	@RequestMapping("/ticketing")
 	public String MovieList(HttpServletRequest request, MovieEntity movie, TheaterEntity theater, Model model) throws Exception {
 		model.addAttribute("doList", movieService.selectDoList());

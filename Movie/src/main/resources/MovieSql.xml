@@ -111,4 +111,13 @@ where a.st_id=b.st_id and b.th_id=c.th_id and d.sc_id=a.sc_id and d.mv_id=e.mv_i
 	from movie a, screening d, screeningschedule b, screeningtheater c 
 	where a.mv_id=d.mv_id and d.sc_id=b.sc_id and b.st_id=c.st_id and c.th_id = #{th_id}
 	</select>
+	
+	<!-- ticketing -->
+	<select id="selectTheaterMovieListTime" parameterType="theater" resultType="hashmap">
+		select a.mv_name, b.SS_STARTTIME, b.SS_DATE from MOVIE a, SCREENINGSCHEDULE b, SCREENING c, THEATER d where a.mv_id=c.mv_id and b.sc_id=c.sc_id and c.th_id=d.th_id and d.th_name=#{th_name}
+	</select>
+	
+	<select id="selectTheaterMovieList" parameterType="theater" resultType="hashmap">
+		select mv_name, mv_grade from movie a, theater b, screening c where a.mv_id=c.mv_id and b.th_id=c.th_id and b.th_name = #{th_name} order by a.mv_reservationrate
+	</select>
 </mapper>
