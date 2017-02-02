@@ -94,7 +94,8 @@ public class MoviemainController {
 				else if(paramName.equals("nmb_name")){
 					nmb = request.getParameter("nmb_name");
 				}*/
-			}	
+			}
+			
 		}
 		//model.addAttribute("idcheck", idCheck);
 		/*model.addAttribute("mb_name", mb);
@@ -107,7 +108,7 @@ public class MoviemainController {
 		MemberEntity rtnMem=movieService.idcheck(request.getParameter("mb_id"));
 		
 		if (rtnMem == null){
-			model.addAttribute("msg", "�븘�씠�뵒�� 鍮꾨�踰덊샇瑜� �솗�씤 �썑 �떎�떆 �떆�룄�빐 二쇱떗�떆�삤.");
+			model.addAttribute("msg", "아이디와 비밀번호를 확인 후 다시 시도해 주십시오.");
 			return "redirect:login";
 		}
 		String idcheck="memy";
@@ -121,7 +122,7 @@ public class MoviemainController {
 			return "redirect:index";
 		}
 		else{
-			model.addAttribute("msg", "占쎈툡占쎌뵠占쎈탵占쏙옙 �뜮袁⑨옙甕곕뜇�깈�몴占� 占쎌넇占쎌뵥 占쎌뜎 占쎈뼄占쎈뻻 占쎈뻻占쎈즲占쎈퉸 雅뚯눘�뼏占쎈뻻占쎌궎."); 
+			model.addAttribute("msg", "�븘�씠�뵒�� 鍮꾨�踰덊샇瑜� �솗�씤 �썑 �떎�떆 �떆�룄�빐 二쇱떗�떆�삤."); 
 			return "redirect:login";
 		}
 			
@@ -138,6 +139,8 @@ public class MoviemainController {
 			session.setAttribute("nmb_name", nmb_name);
 
 		}
+		
+		
 		return "redirect:index";
 	}
 	@RequestMapping("/login")
@@ -172,7 +175,7 @@ public class MoviemainController {
 	public String memberinsert(Locale locale, Model model,HttpServletRequest request,MemberEntity mem,NonmemberEntity nmb) throws Exception {
 		MemberEntity rtnMem=movieService.idcheck(request.getParameter("mb_id"));
 		if(rtnMem!=null){
-			model.addAttribute("msg", "占쎈툡占쎌뵠占쎈탵揶쏉옙 占쎌뵠沃섓옙 鈺곕똻�삺占쎈�占쎈빍占쎈뼄."); 
+			model.addAttribute("msg", "�븘�씠�뵒媛� �씠誘� 議댁옱�빀�땲�떎."); 
 			return "redirect:newmember";
 		}
 		if(rtnMem==null){
@@ -217,7 +220,7 @@ public class MoviemainController {
 		List<FaqEntity> faqList=movieService.faqsearch(request.getParameter("searchKeyword1"));
 		//request.getParameter("selectCodition");
 		System.out.println(request.getParameter("searchKeyword1"));
-		if(faqList.isEmpty()){//筌≪뼚�뱽野껊슣毓억옙�몵筌롳옙
+		if(faqList.isEmpty()){//李얠쓣寃뚯뾾�쑝硫�
 			model.addAttribute("divSearchNone", "none");
 		}
 		if(!request.getParameter("searchKeyword2").isEmpty()){
@@ -259,4 +262,8 @@ public class MoviemainController {
 		
 		return "notice_detail";
 	}
+	
+	
+	
+	
 }
