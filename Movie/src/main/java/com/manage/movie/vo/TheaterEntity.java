@@ -5,6 +5,14 @@ public class TheaterEntity {
 	String th_do;
 	String th_si;
 	String th_name;
+	String etc;
+	public String getEtc() {
+		return etc;
+	}
+	public void setEtc(String etc) {
+		this.etc = etc;
+	}
+	
 	public int getTh_id() {
 		return th_id;
 	}
