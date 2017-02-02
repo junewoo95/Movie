@@ -29,7 +29,7 @@ public class YoojungController {
 	 * Simply selects the home view to render by returning its name.
 	 * @throws Exception 
 	 */
-
+	
 	@RequestMapping("/ticketing")
 	public String MovieList(HttpServletRequest request, MovieEntity movie, TheaterEntity theater, Model model) throws Exception {
 		model.addAttribute("doList", movieService.selectDoList());

@@ -57,15 +57,16 @@
 		var cnt = 0;				
 		for (var i = 1; i <= 5; i++) {
 			for (var j = 1; j <= 5; j++) {
-				
+				alert(id);
 				if (id == "siName" + i + j) {
+					alert(name);
 					document.getElementById("siName" + i + j).className = "on";
-					document.getElementById("reservationList").style.display = "none"; // 예매순
-					document.getElementById("siName" + i + j + "sub").style.display = "block"; // 영화관 눌렀을 때
+					document.getElementById("reservationList").style.display = 'none'; // 예매순
+					//document.getElementById("siName" + i + j + "sub").style.display = 'block'; // 영화관 눌렀을 때 
 
-					document.getElementById("defaultCin").style.display = "none";
-					document.getElementById("selectCin").style.display = "block";
-					document.getElementById("time_noData").style.display = "none";
+					document.getElementById("defaultCin").style.display = 'none';
+					document.getElementById("selectCin").style.display = 'block';
+					document.getElementById("time_noData").style.display = 'none';
 					
 					document.getElementById("selectCinemaName").innerHTML = name +"  "+ "<img src='/movie/resources/img/btn_mv_close.gif' alt='close' onclick='close()'>";
 					//document.getElementById("selectCinemaName").innerHTML = name;
@@ -73,14 +74,14 @@
 
 				else {
 					document.getElementById("siName" + i + j).className = "";
-					document.getElementById("siName" + i + j + "sub").style.display = "none";
+					//document.getElementById("siName" + i + j + "sub").style.display = 'none';
 				}
 			}
 		}
 	}
 	
 	function dayClick(day){
-		//alert(day);
+		alert(day);
 		document.getElementById("todayDate").style.display = "none";
 		
 		document.getElementById("selectDate").innerHTML = day;
@@ -876,6 +877,7 @@ function __doPostBack(eventTarget, eventArgument) {
 																			</ul>
 																		</div></li>
 																</c:when>
+																
 																<c:when test="${name eq '경기'}">
 																	<li><span class="area_zone zone_0${a.index+1}"><a
 																			href="javascript:void(0);"
@@ -1228,8 +1230,6 @@ function __doPostBack(eventTarget, eventArgument) {
                     </div>
                 </div>
                 <strong class="blind" id="time_tab_title">영화관별 조회</strong>
-                
-                
                 
                 <div class="time_noData" id="time_noData" style="display : block;">
                     <span class="noData Lang-LBL0027">상영시간이 조회되지 않았습니다. 영화관 및 영화를 선택해 주십시오.</span>
