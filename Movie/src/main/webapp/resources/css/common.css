@@ -93,10 +93,10 @@
 .trafficATb tbody td .trafficMemo {padding-left:12px; font-size:14px; color:#666; line-height:28px;}
 .trafficATb tbody td .trafficMemo li {text-indent:-9px;}
 .trafficATb tbody td .trafficMemo li.pint {color:#231f20;}
-.trafficATb tbody th .bus {padding:42px 0 0 0; background:url('/LCHS/Image/Icon/icon_bus.png') no-repeat center top;}
-.trafficATb tbody th .subway {padding:42px 0 0 0; background:url('/LCHS/Image/Icon/icon_subway.png') no-repeat center top;}
-.trafficATb tbody th .car {padding:34px 0 0 0; background:url('/LCHS/Image/Icon/icon_car.png') no-repeat center top;}
-.trafficATb tbody th .parking {padding:43px 0 0 0; background:url('/LCHS/Image/Icon/icon_pkLot.png') no-repeat center top;}
+.trafficATb tbody th .bus {padding:42px 0 0 0; background:url('/movie/resources/img/icon_bus.png') no-repeat center top;}
+.trafficATb tbody th .subway {padding:42px 0 0 0; background:url('/movie/resources/img/icon_subway.png') no-repeat center top;}
+.trafficATb tbody th .car {padding:34px 0 0 0; background:url('/movie/resources/img/icon_car.png') no-repeat center top;}
+.trafficATb tbody th .parking {padding:43px 0 0 0; background:url('/movie/resources/img/icon_pkLot.png') no-repeat center top;}
 
 
 /* tbl_style01 */
