@@ -56,15 +56,14 @@ public class YongsangController {
 		if ( mode2.equals("")) mode2 = "1";
 
 		if ( mode2.equals("1") && mode.equals("a")){
-			model.addAttribute("MovieList", movieService.getAllList()); // ÇöÀç»ó¿µÀÛ -> ¿¹¸Å¼ø(¿Ï¼º)
+			model.addAttribute("MovieList", movieService.getAllList()); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½Å¼ï¿½(ï¿½Ï¼ï¿½)
 		}
 		else if ( "b".equals(mode) && mode2.equals("1")){
-			model.addAttribute("MovieList", movieService.getAllList2()); // ÇöÀç»ó¿µÀÛ ->ÆòÁ¡¼ø(¿Ï¼º)
+			model.addAttribute("MovieList", movieService.getAllList2()); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ï¼ï¿½)
 		}
 		else if ( mode2.equals("2")){
-			model.addAttribute("MovieList", movieService.getAllList3()); // »ó¿µ¿¹Á¤ÀÛ
-			List<MovieEntity> list = movieService.getAllList3();
-			System.out.println("aaaaaaaaaaa :::::::::: " + list.get(0).getD_day());
+			model.addAttribute("MovieList", movieService.getAllList3()); // ï¿½ó¿µ¿ï¿½ï¿½ï¿½ï¿½ï¿½
+			List<MovieEntity> list = movieService.getAllList3();			
 		}
 		
 		model.addAttribute("mode", mode);
