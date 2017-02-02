@@ -66,7 +66,6 @@ public class GwanYeongController {
 	@RequestMapping("/Cinema-Detail")
 	public String sendCinemaDetail(Locale locale, Model model, HttpServletRequest req) throws Exception {
 
-		
 		// 영화관 지역 목록
 		List<TheaterEntity> theaterList =  movieService.selectDoList();
 		
