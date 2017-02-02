@@ -25,7 +25,7 @@ public class YongsangController {
 	
 	@Autowired
 	YongsangService movieService;
-	private static final Logger logger = LoggerFactory.getLogger(MoviemainController.class);
+	private static final Logger logger = LoggerFactory.getLogger(YongsangController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -56,13 +56,13 @@ public class YongsangController {
 		if ( mode2.equals("")) mode2 = "1";
 
 		if ( mode2.equals("1") && mode.equals("a")){
-			model.addAttribute("MovieList", movieService.getAllList()); // ������� -> ���ż�(�ϼ�)
+			model.addAttribute("MovieList", movieService.getAllList()); // 占쏙옙占쏙옙占쏙옙占� -> 占쏙옙占신쇽옙(占싹쇽옙)
 		}
 		else if ( "b".equals(mode) && mode2.equals("1")){
-			model.addAttribute("MovieList", movieService.getAllList2()); // ������� ->������(�ϼ�)
+			model.addAttribute("MovieList", movieService.getAllList2()); // 占쏙옙占쏙옙占쏙옙占� ->占쏙옙占쏙옙占쏙옙(占싹쇽옙)
 		}
 		else if ( mode2.equals("2")){
-			model.addAttribute("MovieList", movieService.getAllList3()); // �󿵿�����
+			model.addAttribute("MovieList", movieService.getAllList3()); // 占쏢영울옙占쏙옙占쏙옙
 			List<MovieEntity> list = movieService.getAllList3();			
 		}
 		
