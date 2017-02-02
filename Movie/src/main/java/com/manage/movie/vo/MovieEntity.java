@@ -17,7 +17,14 @@ public class MovieEntity {
 	String mv_grade;
 	String mv_summary;
 	String mv_reservationrate;
+	String d_day;
 	
+	public String getD_day() {
+		return d_day;
+	}
+	public void setD_day(String d_day) {
+		this.d_day = d_day;
+	}
 	public int getMv_id() {
 		return mv_id;
 	}
